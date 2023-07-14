@@ -29,16 +29,16 @@ UNIQUE KEY (project_id, category_id)
 );
 
 CREATE TABLE step (
-step_id INT AUTO_INCREMENT NOT NULL,
 project_id INT NOT NULL,
 step_text TEXT NOT NULL,
 step_order INT NOT NULL,
+step_id INT AUTO_INCREMENT NOT NULL,
 PRIMARY KEY (step_id),
 FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
 );
 
 CREATE TABLE material (
-material_id INT NOT NULL,
+material_id INT auto_increment NOT NULL,
 project_id INT NOT NULL,
 material_name VARCHAR(128) NOT NULL,
 num_required INT,
